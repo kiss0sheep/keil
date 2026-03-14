@@ -1,0 +1,21 @@
+#include <INTRINS.H>
+#include <REGX52.H>
+
+void Delay(unsigned char xms)		
+{
+	while(xms)
+	{
+		unsigned char i, j;
+
+		_nop_();
+		_nop_();
+		_nop_();
+		i = 11;
+		j = 190;
+		do
+		{
+			while (--j);
+		} while (--i);
+		xms--;
+	}	
+}
